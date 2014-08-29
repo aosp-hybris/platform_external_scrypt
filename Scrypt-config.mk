@@ -41,7 +41,7 @@ arm_src_files :=
 
 arm_exclude_files :=
 
-arm_neon_c_flags :=
+arm_neon_c_flags := -flax-vector-conversions
 
 arm_neon_src_files := \
   lib/crypto/crypto_scrypt-neon.c \
@@ -102,4 +102,3 @@ host_src_files  := $(common_src_files) $($(host_arch)_src_files)
 host_src_files  := $(filter-out $($(host_arch)_exclude_files), $(host_src_files))
 
 local_additional_dependencies += $(LOCAL_PATH)/Scrypt-config.mk
-
